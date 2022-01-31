@@ -13,10 +13,6 @@
             <label>Size of the gap between a window and the left screen edge</label>
             <default>12</default>
         </entry>
-        <entry name="gapMid" type="int">
-            <label>Size of the gap between adjacent windows</label>
-            <default>12</default>
-        </entry>
         <entry name="gapRight" type="int">
             <label>Size of the gap between a window and the right screen edge</label>
             <default>12</default>
@@ -24,10 +20,6 @@
         <entry name="gapBottom" type="int">
             <label>Size of the gap between a window and the bottom screen edge</label>
             <default>12</default>
-        </entry>
-        <entry name="includeMaximized" type="bool">
-            <label>Whether to gap maximized windows</label>
-            <default>false</default>
         </entry>
         <entry name="excludeMode" type="bool">
             <label>Whether to gap all except the specified applications</label>
