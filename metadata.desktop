@@ -13,7 +13,7 @@ X-KDE-PluginInfo-Version=1.0
 X-KDE-PluginInfo-Author=Murat Çileli
 X-KDE-PluginInfo-Email=murat.cileli@gmail.com
 X-KDE-PluginInfo-License=GPL v3.0
-X-KDE-PluginInfo-Website=
+X-KDE-PluginInfo-Website=https://store.kde.org/p/1695214/
 
 Type=Service
 X-KDE-ServiceTypes=KWin/Script,KCModule
