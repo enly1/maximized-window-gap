@@ -21,7 +21,7 @@ Extension for KDE's window manager to add space around maximized windows. The si
 
 ```bash
 git clone https://github.com/murat-cileli/maximized-window-gap.git
-plasmapkg2 --type kwinscript -i maximized-window-gap
+kpackagetool5 --type=KWin/Script -i maximized-window-gap
 qdbus org.kde.KWin /KWin reconfigure
 ```
 
