@@ -6,8 +6,8 @@
 
         "Authors": [
             {
-                "Email": "username@gmail.com",
-                "Name": "Firstname Lastname"
+                "Email": "murat.cileli@gmail.com",
+                "Name": "Murat Çileli"
             }
         ],
         "Id": "maximized-window-gap",
@@ -17,10 +17,11 @@
         ],
         "Version": "1.0",
         "Licsense": "GPLv3",
-        "Website": "https://github.com/username/myscript"
+        "Website": "https://store.kde.org/p/1695214/"
     },
     "X-Plasma-API": "javascript",
     "X-Plasma-MainScript": "code/main.js",
-    "X-KDE-ConfigModule": "kwin/effects/configs/kcm_kwin4_genericscripted"
+    "X-KDE-ConfigModule": "kwin/effects/configs/kcm_kwin4_genericscripted",
+    "X-KDE-PluginKeyword": "maximized-window-gap"
 }
 
