@@ -10,6 +10,8 @@ const config = {
     gapLeft: readConfig("gapLeft", 12),
     gapRight: readConfig("gapRight", 12),
     gapBottom: readConfig("gapBottom", 12),
+    // gapMid: Missing config item for 1/2 screen processing and quarter screen positioning
+    gapMid: readConfig("gapMid",6),
     offsetTop: readConfig("offsetTop", 0),
     offsetLeft: readConfig("offsetLeft", 0),
     offsetRight: readConfig("offsetRight", 0),
@@ -93,6 +95,7 @@ function onRelayouted() {
 }
 
 function applyGaps(client) {
+
     if (block || !client || ignoreClient(client)) return;
     block = true;
     applyGapsArea(client);
@@ -102,6 +105,7 @@ function applyGaps(client) {
 function applyGapsArea(client) {
     let grid = getGrid(client);
     let win = client.geometry;
+
 
     for (let i = 0; i < Object.keys(grid.left).length; i++) {
         let pos = Object.keys(grid.left)[i];
@@ -118,8 +122,8 @@ function applyGapsArea(client) {
         let pos = Object.keys(grid.right)[i];
         let coords = grid.right[pos];
         if (nearArea(win.right, coords, config.gapRight)) {
-            let diff = win.right - coords.gapped;
-            win.width -= diff;
+           let diff = win.right - coords.gapped;
+           win.width -= diff;
             break;
         }
     }
@@ -134,7 +138,6 @@ function applyGapsArea(client) {
             break;
         }
     }
-
     for (let i = 0; i < Object.keys(grid.bottom).length; i++) {
         let pos = Object.keys(grid.bottom)[i];
         let coords = grid.bottom[pos];
@@ -157,12 +160,12 @@ function getArea(client) {
         right: clientArea.x + clientArea.width - config.offsetRight - 1,
         top: clientArea.y + config.offsetTop,
         bottom: clientArea.y + clientArea.height - config.offsetBottom - 1,
-    };
+    } 
 }
 
 function getGrid(client) {
     let area = getArea(client);
-    return {
+     return {
         left: {
             fullLeft: {
                 closed: Math.round(area.left),
@@ -244,7 +247,9 @@ function nearArea(actual, expected, gap) {
         actual !== expected.gapped;
 }
 
+
 function ignoreClient(client) {
+
     return !client
         ||
         !(client.normalWindow || ["plasma-interactiveconsole"].includes(String(client.resourceClass)))
@@ -255,9 +260,10 @@ function ignoreClient(client) {
         ||
         client.fullScreen
         ||
-        (client.width !== workspace.clientArea(KWin.MaximizeArea, client).width &&
-            client.height !== workspace.clientArea(KWin.MaximizeArea, client).height)
-        ||
+// This disabled anything that wasn't maximized from being processed - broke 1/2 and 1/4 screen snaps
+//        (client.width !== workspace.clientArea(KWin.MaximizeArea, client).width &&
+//            client.height !== workspace.clientArea(KWin.MaximizeArea, client).height)
+//        ||
         (config.excludeMode &&
             config.excludedApps.includes(String(client.resourceClass)))
         ||
