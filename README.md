@@ -2,6 +2,8 @@
 
 >*This is a reduced version of **[Window Gaps](https://github.com/nclarius/tile-gaps)** script by **Natalie Clarius**. All credit goes to her.*
 
+>This also contains a bugfix to avoid 1/2 window snaps from breaking.
+
 Extension for KDE's window manager to add space around maximized windows. The size of the gaps are configurable.
 
 ![screenshot](.img/screenshot.png)
